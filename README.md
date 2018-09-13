@@ -36,12 +36,12 @@ var persons = new List<Person>
 };
 
 var table = persons.ToStringTable(
-    u => u.FirstName,
-    u => u.MiddleName,
-    u => u.LastName,
-    u => u.CreatedOn,
-    u => u.LastModifiedOn,
-    u => u.Age
+    p => p.FirstName,
+    p => p.MiddleName,
+    p => p.LastName,
+    p => p.CreatedOn,
+    p => p.LastModifiedOn,
+    p => p.Age
 );
 
 Console.WriteLine(table);
@@ -57,9 +57,9 @@ Console.WriteLine(table);
 ### Custom Column Headers
 
 ````csharp
-var customTable = users.ToStringTable(new[] { "First Name", "Last Name" },
-    u => u.FirstName,
-    u => u.LastName
+var customTable = persons.ToStringTable(new[] { "First Name", "Last Name" },
+    p => p.FirstName,
+    p => p.LastName
 );
 
 Console.WriteLine(customTable);
