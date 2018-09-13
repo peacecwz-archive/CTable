@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IsPackable>true</IsPackable>
+        <PackageId>CTable</PackageId>
+        <Authors>Baris Ceviz</Authors>
+        <Product>CTable</Product>
+        <Description>Write collection to console as a table</Description>
+        <Copyright>Copyright @ 2018 Baris Ceviz</Copyright>
+        <PackageLicenseUrl>https://github.com/peacecwz/CTable/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/peacecwz/CTable</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/peacecwz/CTable.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>console,table,extension</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+</Project>
