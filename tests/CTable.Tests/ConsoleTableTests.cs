@@ -9,11 +9,11 @@ namespace CTable.Tests
         [Fact]
         public void Should_Test_List_To_Console_Table()
         {
-            var users = new List<Person>
+            //Arrange
+            var persons = new List<Person>
             {
                 new Person
                 {
-                    
                 },
                 new Person
                 {
@@ -26,44 +26,39 @@ namespace CTable.Tests
                 }
             };
 
-            var actual = users.ToStringTable(
-                u => u.FirstName,
-                u => u.MiddleName,
-                u => u.LastName,
-                u => u.CreatedOn,
-                u => u.LastModifiedOn,
-                u => u.Age
+            //Act
+            var actual = persons.ToStringTable(
+                p => p.FirstName,
+                p => p.MiddleName,
+                p => p.LastName,
+                p => p.CreatedOn,
+                p => p.LastModifiedOn,
+                p => p.Age
             );
 
             Console.WriteLine(actual);
-
-            var guids = new List<Guid>
-            {
-                Guid.NewGuid(), 
-                Guid.NewGuid()
-            };
-
-            var guidTable = guids.ToStringTable(new[] { "UserId" }, g => g);
-            Console.WriteLine(guidTable);
         }
 
         [Fact]
         public void Should_Test_Empty_List_To_Console_Table()
         {
-            var users = new List<Person>();
+            //Arrange
+            var persons = new List<Person>();
 
-            var table = users.ToStringTable(
-                u => u.FirstName,
-                u=>u.MiddleName,
-                u => u.LastName,
-                u => u.CreatedOn,
-                u => u.LastModifiedOn,
-                u => u.Age
+            //Act
+            var table = persons.ToStringTable(
+                p => p.FirstName,
+                p => p.MiddleName,
+                p => p.LastName,
+                p => p.CreatedOn,
+                p => p.LastModifiedOn,
+                p => p.Age
             );
 
+            //Assert
             Console.WriteLine(table);
         }
-        
+
         private class Person
         {
             public string FirstName { get; set; }
